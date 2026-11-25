@@ -1,7 +1,7 @@
 [project]
 name = "finsight-ai"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI analyst for SEC 10-K/10-Q filings: RAG, agents, evaluation, deployment"
 readme = "README.md"
 authors = [
     { name = "Darshankumar Jikadara", email = "darshanjikadara2003@gmail.com" }
@@ -17,3 +17,6 @@ finsight-ai = "finsight_ai:main"
 [build-system]
 requires = ["uv_build>=0.13.9,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "finsight"
