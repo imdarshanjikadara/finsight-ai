@@ -1,0 +1,154 @@
+GFC FINANCIAL CHATBOT - TEST RESULTS
+======================================================================
+
+PART 1: AUTOMATIC CHECKS (17/17 passed)
+----------------------------------------------------------------------
+[PASS] Q1 revenue (latest year by default)
+        input: What is the total revenue of Microsoft?
+[PASS] Q1 revenue for a specific year
+        input: What is Apple's total revenue in 2024?
+[PASS] Q2 net income change
+        input: How has Tesla's net income changed over the last year?
+[PASS] Q2 net income change, first year (no prior data)
+        input: How has Apple's net income changed in 2023?
+[PASS] Q3 net profit margin
+        input: What is the net profit margin of Microsoft?
+[PASS] Q4 operating cash flow
+        input: What is Apple's operating cash flow?
+[PASS] Q5 balance sheet health
+        input: How healthy is Tesla's balance sheet?
+[PASS] Exact template query uses remembered company (state)
+        input: Tell me about Apple -> What is the total revenue?
+[PASS] Follow-up without naming the company (state)
+        input: What is Microsoft's revenue? -> What about its cash flow?
+[PASS] Year remembered across follow-ups
+        input: Tesla revenue in 2024 -> and the margin?
+[PASS] Comparison across companies
+        input: Compare all companies
+[PASS] No company given yet: bot asks which one
+        input: What is the total revenue?
+[PASS] Year outside dataset is handled
+        input: What was Microsoft's revenue in 2019?
+[PASS] Unrecognised query is handled gracefully
+        input: What's the weather like today?
+[PASS] Investment-advice request is declined
+        input: Should I buy Tesla stock?
+[PASS] Help command
+        input: help
+[PASS] Case and punctuation insensitive
+        input: WHAT IS THE TOTAL REVENUE OF TSLA???
+
+PART 2: SAMPLE CONVERSATION TRANSCRIPT
+----------------------------------------------------------------------
+
+You: hello
+Bot: Hello! Ask me about Microsoft, Tesla or Apple. Type 'help' for example questions.
+
+You: What is the total revenue?
+Bot: Which company do you mean: Microsoft, Tesla or Apple? For example: 'What is the total revenue of Apple?'
+
+You: Tell me about Microsoft
+Bot: Here's a quick snapshot of Microsoft for FY2025 (fiscal year ended June 30, 2025):
+  Revenue:              $281.7 billion
+  Net income:           $101.8 billion
+  Total assets:         $619.0 billion
+  Total liabilities:    $275.5 billion
+  Operating cash flow:  $136.2 billion
+
+You could also ask: "How has net income changed?" | "What is the net profit margin?"
+
+You: What is the total revenue?
+Bot: Microsoft's total revenue in FY2025 (fiscal year ended June 30, 2025) was $281.7 billion. That is up 14.9% from $245.1 billion the year before.
+
+You could also ask: "How has net income changed?" | "What is the net profit margin?"
+
+You: How has net income changed over the last year?
+Bot: Microsoft's net income increased by $13.7 billion (15.5%) over the last year, from $88.1 billion in FY2024 to $101.8 billion in FY2025.
+
+Microsoft net income trend:
+  FY2023 ##################         $72.4 billion
+  FY2024 ######################     $88.1 billion
+  FY2025 #########################  $101.8 billion
+
+You could also ask: "What is the net profit margin?" | "Compare all companies"
+
+You: What is the net profit margin?
+Bot: Microsoft's net profit margin in FY2025 was 36.1%. In plain terms, Microsoft kept about $0.36 of profit from every $1 of sales. The margin improved from 36.0% in FY2024.
+
+You could also ask: "What is the total revenue?" | "What is the operating cash flow?"
+
+You: What is the operating cash flow?
+Bot: Microsoft generated $136.2 billion of cash from operating activities in FY2025. This is the cash the business produced from its day-to-day operations. That is 1.34x its net income, so its profits are well backed by real cash. Operating cash flow was up 14.9% from the year before.
+
+You could also ask: "How healthy is the balance sheet?" | "How has net income changed?"
+
+You: How healthy is the balance sheet?
+Bot: At the end of FY2025, Microsoft had total assets of $619.0 billion and total liabilities of $275.5 billion. Liabilities were 44.5% of assets, leaving $343.5 billion of equity. That indicates a conservative balance sheet: most of its assets are funded by shareholders' equity rather than obligations.
+
+You could also ask: "What is the operating cash flow?" | "Compare all companies"
+
+You: Now Tesla
+Bot: Here's a quick snapshot of Tesla for FY2025 (fiscal year ended December 31, 2025):
+  Revenue:              $94.8 billion
+  Net income:           $3.8 billion
+  Total assets:         $137.8 billion
+  Total liabilities:    $54.9 billion
+  Operating cash flow:  $14.7 billion
+
+You could also ask: "How has net income changed?" | "What is the net profit margin?"
+
+You: How has net income changed over the last year?
+Bot: Tesla's net income decreased by $3.3 billion (46.5%) over the last year, from $7.1 billion in FY2024 to $3.8 billion in FY2025.
+
+Tesla net income trend:
+  FY2023 #########################  $15.0 billion
+  FY2024 ############               $7.1 billion
+  FY2025 ######                     $3.8 billion
+
+You could also ask: "What is the net profit margin?" | "Compare all companies"
+
+You: What is Apple's net profit margin in 2024?
+Bot: Apple's net profit margin in FY2024 was 24.0%. In plain terms, Apple kept about $0.24 of profit from every $1 of sales. The margin declined from 25.3% in FY2023.
+
+You could also ask: "What is the total revenue?" | "What is the operating cash flow?"
+
+You: Compare all companies
+Bot: FY2024 comparison (by revenue; fiscal years end on different dates):
+  Apple      #########################  revenue $391.0 billion, net income $93.7 billion, margin 24.0%
+  Microsoft  ################           revenue $245.1 billion, net income $88.1 billion, margin 36.0%
+  Tesla      ######                     revenue $97.7 billion, net income $7.1 billion, margin 7.3%
+
+Apple has the most revenue; Microsoft has the highest profit margin.
+
+You could also ask: "How healthy is Apple's balance sheet?" | "How has Tesla's net income changed?"
+
+You: What was revenue in 2021?
+Bot: Sorry, I only have data for fiscal years 2023-2025, not 2021.
+
+You: Should I buy Tesla stock?
+Bot: I can't give investment advice. I only report what the companies' 10-K filings show. To help you form your own view, try asking about Tesla's revenue, net income change, profit margin, cash flow or balance sheet, or type 'compare all companies'.
+
+You: help
+Bot: I answer questions about Microsoft, Tesla and Apple for fiscal years 2023-2025 (data from their 10-K filings).
+
+Predefined questions:
+  1. What is the total revenue?
+  2. How has net income changed over the last year?
+  3. What is the net profit margin?
+  4. What is the operating cash flow?
+  5. How healthy is the balance sheet?
+
+Examples:
+  What is the total revenue of Microsoft?
+  How has Tesla's net income changed over the last year?
+  What is Apple's net profit margin in 2024?
+  Compare all companies
+
+Tips: name a company once and I'll remember it for follow-up questions. With no year given, I use the latest year (FY2025).
+Commands: help, reset, exit
+
+You: exit
+Bot: Goodbye! Thanks for using the GFC Financial Chatbot.
+
+----------------------------------------------------------------------
+Queries the rules could not answer (logged for the NLP/ML team): []

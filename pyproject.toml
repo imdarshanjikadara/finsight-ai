@@ -27,6 +27,10 @@ dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.6",
 ]
+notebooks = [
+    "ipykernel>=7.4.0",
+    "matplotlib>=3.11.2",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -34,6 +38,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py312"
+extend-exclude = ["baseline"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
